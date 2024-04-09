@@ -35,3 +35,10 @@ package-lock.json
 
 node_modules
 public
+
+# shad/cn
+src/components/ui/
+
+# supabase
+# supabase型ファイル
+types_db.ts

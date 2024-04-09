@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-import Logo from '@/components/icons/Logo';
 import GitHub from '@/components/icons/GitHub';
+import Logo from '@/components/icons/Logo';
 
 export default function Footer() {
   return (
@@ -9,8 +9,8 @@ export default function Footer() {
       <div className="grid grid-cols-1 gap-8 py-12 text-white transition-colors duration-150 border-b lg:grid-cols-12 border-zinc-600 bg-zinc-900">
         <div className="col-span-1 lg:col-span-2">
           <Link
-            href="/"
             className="flex items-center flex-initial font-bold md:mr-24"
+            href="/"
           >
             <span className="mr-2 border rounded-full border-zinc-700">
               <Logo />
@@ -22,32 +22,32 @@ export default function Footer() {
           <ul className="flex flex-col flex-initial md:flex-1">
             <li className="py-3 md:py-0 md:pb-4">
               <Link
-                href="/"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
+                href="/"
               >
                 Home
               </Link>
             </li>
             <li className="py-3 md:py-0 md:pb-4">
               <Link
-                href="/"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
+                href="/"
               >
                 About
               </Link>
             </li>
             <li className="py-3 md:py-0 md:pb-4">
               <Link
-                href="/"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
+                href="/"
               >
                 Careers
               </Link>
             </li>
             <li className="py-3 md:py-0 md:pb-4">
               <Link
-                href="/"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
+                href="/"
               >
                 Blog
               </Link>
@@ -63,16 +63,16 @@ export default function Footer() {
             </li>
             <li className="py-3 md:py-0 md:pb-4">
               <Link
-                href="/"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
+                href="/"
               >
                 Privacy Policy
               </Link>
             </li>
             <li className="py-3 md:py-0 md:pb-4">
               <Link
-                href="/"
                 className="text-white transition duration-150 ease-in-out hover:text-zinc-200"
+                href="/"
               >
                 Terms of Use
               </Link>
@@ -98,11 +98,11 @@ export default function Footer() {
         </div>
         <div className="flex items-center">
           <span className="text-white">Crafted by</span>
-          <a href="https://vercel.com" aria-label="Vercel.com Link">
+          <a aria-label="Vercel.com Link" href="https://vercel.com">
             <img
-              src="/vercel.svg"
               alt="Vercel.com Logo"
               className="inline-block h-6 ml-4 text-white"
+              src="/vercel.svg"
             />
           </a>
         </div>

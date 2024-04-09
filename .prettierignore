@@ -1,5 +1,4 @@
 # Build artifacts
-.next/
 .turbo/
 _next/
 __tmp__/
@@ -8,6 +7,43 @@ node_modules/
 target/
 compiled/
 
+types_db.ts
+database.types.ts
+
+# Ignore artifacts:
+/build
+coverage
+
+# dotfile
+.env*
+
+# next.js
+/.next/
+/out/
+
+package-lock.json
 pnpm-lock.yaml
 
-types_db.ts
+# Supabase
+/supabase/
+src/types/*
+src/types/database.types.ts
+src/types/types_db.ts
+
+# Storybook
+*.stories.ts
+*.stories.tsx
+
+# Dependency directories
+node_modules
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# text
+*.md
+*.txt
+*.csv
+

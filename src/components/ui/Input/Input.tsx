@@ -1,5 +1,5 @@
-import React, { InputHTMLAttributes, ChangeEvent } from 'react';
 import cn from 'classnames';
+import React, { InputHTMLAttributes, ChangeEvent } from 'react';
 
 import s from './Input.module.css';
 
@@ -22,11 +22,11 @@ const Input = (props: Props) => {
   return (
     <label>
       <input
-        className={rootClassName}
-        onChange={handleOnChange}
+        autoCapitalize="off"
         autoComplete="off"
         autoCorrect="off"
-        autoCapitalize="off"
+        className={rootClassName}
+        onChange={handleOnChange}
         spellCheck="false"
         {...rest}
       />

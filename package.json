@@ -5,12 +5,19 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "prettier-fix": "prettier --write .",
+    "lint": "eslint --ext .ts,.js,.tsx,.jsx src",
+    "lint:debug": "eslint --ext .ts,.js,.tsx,.jsx src --debug",
+    "lint:fix": "eslint --ext .ts,.js,.tsx,.jsx src --fix",
+    "prettier-fix": "prettier --write . '**/*.{js,jsx,ts,tsx}'",
+    "prepare": "husky",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "coverage": "vitest run --coverage",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
     "stripe:login": "stripe login",
     "stripe:listen": "stripe listen --forward-to=localhost:3000/api/webhooks",
-    "stripe:fixtures": "stripe fixtures fixtures/stripe-fixtures.json",
-    "prepare": "husky"
+    "stripe:fixtures": "stripe fixtures fixtures/stripe-fixtures.json"
   },
   "dependencies": {
     "@radix-ui/react-toast": "^1.1.5",
@@ -31,6 +38,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "^14.1.4",
     "@types/node": "^20.11.17",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
@@ -38,7 +46,7 @@
     "@typescript-eslint/parser": "^7.6.0",
     "autoprefixer": "^10.4.17",
     "eslint": "^8.56.0",
-    "eslint-config-next": "14.1.0",
+    "eslint-config-next": "^14.1.4",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-react": "^7.33.2",

@@ -1,15 +1,17 @@
 'use client';
 
-import Button from '@/components/ui/Button';
-import LogoCloud from '@/components/ui/LogoCloud';
-import type { Tables } from '@/types/types_db';
-import { getStripe } from '@/utils/stripe/client';
-import { checkoutWithStripe } from '@/utils/stripe/server';
-import { getErrorRedirect } from '@/utils/helpers';
 import { User } from '@supabase/supabase-js';
 import cn from 'classnames';
 import { useRouter, usePathname } from 'next/navigation';
 import { useState } from 'react';
+
+import type { Tables } from '@/types/types_db';
+
+import Button from '@/components/ui/Button';
+import LogoCloud from '@/components/ui/LogoCloud';
+import { getErrorRedirect } from '@/utils/helpers';
+import { getStripe } from '@/utils/stripe/client';
+import { checkoutWithStripe } from '@/utils/stripe/server';
 
 type Subscription = Tables<'subscriptions'>;
 type Product = Tables<'products'>;
@@ -85,7 +87,7 @@ export default function Pricing({ user, products, subscription }: Props) {
     return (
       <section className="bg-black">
         <div className="max-w-6xl px-4 py-8 mx-auto sm:py-24 sm:px-6 lg:px-8">
-          <div className="sm:flex sm:flex-col sm:align-center"></div>
+          <div className="sm:flex sm:flex-col sm:align-center" />
           <p className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
             No subscription pricing plans found. Create them in your{' '}
             <a
@@ -117,26 +119,26 @@ export default function Pricing({ user, products, subscription }: Props) {
             <div className="relative self-center mt-6 bg-zinc-900 rounded-lg p-0.5 flex sm:mt-8 border border-zinc-800">
               {intervals.includes('month') && (
                 <button
-                  onClick={() => setBillingInterval('month')}
-                  type="button"
                   className={`${
                     billingInterval === 'month'
                       ? 'relative w-1/2 bg-zinc-700 border-zinc-800 shadow-sm text-white'
                       : 'ml-0.5 relative w-1/2 border border-transparent text-zinc-400'
                   } rounded-md m-1 py-2 text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8`}
+                  onClick={() => setBillingInterval('month')}
+                  type="button"
                 >
                   Monthly billing
                 </button>
               )}
               {intervals.includes('year') && (
                 <button
-                  onClick={() => setBillingInterval('year')}
-                  type="button"
                   className={`${
                     billingInterval === 'year'
                       ? 'relative w-1/2 bg-zinc-700 border-zinc-800 shadow-sm text-white'
                       : 'ml-0.5 relative w-1/2 border border-transparent text-zinc-400'
                   } rounded-md m-1 py-2 text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8`}
+                  onClick={() => setBillingInterval('year')}
+                  type="button"
                 >
                   Yearly billing
                 </button>
@@ -156,7 +158,6 @@ export default function Pricing({ user, products, subscription }: Props) {
               }).format((price?.unit_amount || 0) / 100);
               return (
                 <div
-                  key={product.id}
                   className={cn(
                     'flex flex-col rounded-lg shadow-sm divide-y divide-zinc-600 bg-zinc-900',
                     {
@@ -168,6 +169,7 @@ export default function Pricing({ user, products, subscription }: Props) {
                     'basis-1/3', // Assuming you want each card to take up roughly a third of the container's width
                     'max-w-xs' // Sets a maximum width to the cards to prevent them from getting too large
                   )}
+                  key={product.id}
                 >
                   <div className="p-6">
                     <h2 className="text-2xl font-semibold leading-6 text-white">
@@ -183,11 +185,11 @@ export default function Pricing({ user, products, subscription }: Props) {
                       </span>
                     </p>
                     <Button
-                      variant="slim"
-                      type="button"
+                      className="block w-full py-2 mt-8 text-sm font-semibold text-center text-white rounded-md hover:bg-zinc-900"
                       loading={priceIdLoading === price.id}
                       onClick={() => handleStripeCheckout(price)}
-                      className="block w-full py-2 mt-8 text-sm font-semibold text-center text-white rounded-md hover:bg-zinc-900"
+                      type="button"
+                      variant="slim"
                     >
                       {subscription ? 'Manage' : 'Subscribe'}
                     </Button>

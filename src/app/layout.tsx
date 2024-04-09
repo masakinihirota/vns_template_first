@@ -1,8 +1,7 @@
 import { Metadata } from 'next';
-import Footer from '@/components/ui/Footer';
-import Navbar from '@/components/ui/Navbar';
-import { Toaster } from '@/components/ui/Toasts/toaster';
 import { PropsWithChildren, Suspense } from 'react';
+
+import { Toaster } from '@/components/ui/Toasts/toaster';
 import { getURL } from '@/utils/helpers';
 import '@/styles/main.css';
 
@@ -52,8 +51,8 @@ export default async function RootLayout({ children }: PropsWithChildren) {
       <body className="bg-black loading">
         {/* <Navbar /> */}
         <main
-          id="skip"
           className="min-h-[calc(100dvh-4rem)] md:min-h[calc(100dvh-5rem)]"
+          id="skip"
         >
           {children}
         </main>

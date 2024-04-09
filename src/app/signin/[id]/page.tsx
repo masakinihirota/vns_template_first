@@ -1,21 +1,22 @@
-import Logo from '@/components/icons/Logo';
-import { createClient } from '@/utils/supabase/server';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
+
+import Logo from '@/components/icons/Logo';
+import EmailSignIn from '@/components/ui/AuthForms/EmailSignIn';
+import ForgotPassword from '@/components/ui/AuthForms/ForgotPassword';
+import OauthSignIn from '@/components/ui/AuthForms/OauthSignIn';
+import PasswordSignIn from '@/components/ui/AuthForms/PasswordSignIn';
+import Separator from '@/components/ui/AuthForms/Separator';
+import SignUp from '@/components/ui/AuthForms/Signup';
+import UpdatePassword from '@/components/ui/AuthForms/UpdatePassword';
+import Card from '@/components/ui/Card';
 import {
   getAuthTypes,
   getViewTypes,
   getDefaultSignInView,
   getRedirectMethod
 } from '@/utils/auth-helpers/settings';
-import Card from '@/components/ui/Card';
-import PasswordSignIn from '@/components/ui/AuthForms/PasswordSignIn';
-import EmailSignIn from '@/components/ui/AuthForms/EmailSignIn';
-import Separator from '@/components/ui/AuthForms/Separator';
-import OauthSignIn from '@/components/ui/AuthForms/OauthSignIn';
-import ForgotPassword from '@/components/ui/AuthForms/ForgotPassword';
-import UpdatePassword from '@/components/ui/AuthForms/UpdatePassword';
-import SignUp from '@/components/ui/AuthForms/Signup';
+import { createClient } from '@/utils/supabase/server';
 
 export default async function SignIn({
   params,
@@ -58,7 +59,7 @@ export default async function SignIn({
     <div className="flex justify-center height-screen-helper">
       <div className="flex flex-col justify-between max-w-lg p-3 m-auto w-80 ">
         <div className="flex justify-center pb-12 ">
-          <Logo width="64px" height="64px" />
+          <Logo height="64px" width="64px" />
         </div>
         <Card
           title={
@@ -80,15 +81,15 @@ export default async function SignIn({
           {viewProp === 'email_signin' && (
             <EmailSignIn
               allowPassword={allowPassword}
-              redirectMethod={redirectMethod}
               disableButton={searchParams.disable_button}
+              redirectMethod={redirectMethod}
             />
           )}
           {viewProp === 'forgot_password' && (
             <ForgotPassword
               allowEmail={allowEmail}
-              redirectMethod={redirectMethod}
               disableButton={searchParams.disable_button}
+              redirectMethod={redirectMethod}
             />
           )}
           {viewProp === 'update_password' && (

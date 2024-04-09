@@ -4,9 +4,9 @@ import cn from 'classnames';
 import React, { forwardRef, useRef, ButtonHTMLAttributes } from 'react';
 import { mergeRefs } from 'react-merge-refs';
 
-import LoadingDots from '@/components/ui/LoadingDots';
-
 import styles from './Button.module.css';
+
+import LoadingDots from '@/components/ui/LoadingDots';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'slim' | 'flat';
@@ -42,10 +42,10 @@ const Button = forwardRef<HTMLButtonElement, Props>((props, buttonRef) => {
   return (
     <Component
       aria-pressed={active}
-      data-variant={variant}
-      ref={mergeRefs([ref, buttonRef])}
       className={rootClassName}
+      data-variant={variant}
       disabled={disabled}
+      ref={mergeRefs([ref, buttonRef])}
       style={{
         width,
         ...style
