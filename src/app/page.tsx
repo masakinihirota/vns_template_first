@@ -1,9 +1,9 @@
-import PricingPage from "./PricingPage";
+import PricingPage from './PricingPage';
 
 export default function Page() {
   return (
     <div className="">
-Page
+      Page
       {/* <PricingPage /> */}
     </div>
   );
