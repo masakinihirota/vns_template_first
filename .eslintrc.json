@@ -30,7 +30,13 @@
   // 追加ルールの指定
   // pluginsにルールを指定しても、ルールは適用されていない状態
   // 追加ルールを適用する場合は、extendsかrulesで設定が必要
-  "plugins": ["react", "react-hooks", "@typescript-eslint", "import", "unused-imports"],
+  "plugins": [
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
+    "import",
+    "unused-imports"
+  ],
 
   // 共有設定の適用
   // 各pluginで公開されている設定ファイルを指定することで、ルールの設定を適用
