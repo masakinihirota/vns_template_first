@@ -25,8 +25,14 @@ export async function middleware(req: NextRequest) {
   if (!lng) lng = fallbackLng;
 
   // パスのlanguagesがサポートされていない場合はリダイレクトします
+  // スターター部分の認証機能関連のpathはi18nに対応してないのでハードコーディングしている。
+  // 認証関連のパスはi18n機能に対応していない。
   if (
     req.nextUrl.pathname !== '/' && // ルートパスの場合はリダイレクトしない
+    req.nextUrl.pathname !== '/signin' &&
+    req.nextUrl.pathname !== '/signin/password_signin' &&
+    req.nextUrl.pathname !== '/auth/callback' &&
+    req.nextUrl.pathname !== '/account' &&
     !languages.some((loc) => req.nextUrl.pathname.startsWith(`/${loc}`)) &&
     !req.nextUrl.pathname.startsWith('/_next')
   ) {
