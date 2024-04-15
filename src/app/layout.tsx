@@ -1,9 +1,16 @@
+import { dir } from 'i18next';
 import { Metadata } from 'next';
-import { PropsWithChildren, Suspense } from 'react';
+import { Suspense } from 'react';
 
+import { languages } from '@/app/i18n/settings';
+import Navbar from '@/components/ui/Navbar';
 import { Toaster } from '@/components/ui/Toasts/toaster';
 import { getURL } from '@/utils/helpers';
 import '@/styles/main.css';
+
+export async function generateStaticParams() {
+  return languages.map(lng => ({ lng }));
+}
 
 const meta = {
   title: 'Next.js Subscription Starter',
@@ -11,7 +18,7 @@ const meta = {
   cardImage: '/og.png',
   robots: 'follow, index',
   favicon: '/favicon.ico',
-  url: getURL()
+  url: getURL(),
 };
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -32,7 +39,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description: meta.description,
       images: [meta.cardImage],
       type: 'website',
-      siteName: meta.title
+      siteName: meta.title,
     },
     twitter: {
       card: 'summary_large_image',
@@ -40,20 +47,17 @@ export async function generateMetadata(): Promise<Metadata> {
       creator: '@Vercel',
       title: meta.title,
       description: meta.description,
-      images: [meta.cardImage]
-    }
+      images: [meta.cardImage],
+    },
   };
 }
 
-export default async function RootLayout({ children }: PropsWithChildren) {
+export default async function RootLayout({ children, params: { lng = 'ja' } }) {
   return (
-    <html lang="en">
+    <html lang={lng} dir={dir(lng)}>
       <body className="bg-black loading">
-        {/* <Navbar /> */}
-        <main
-          className="min-h-[calc(100dvh-4rem)] md:min-h[calc(100dvh-5rem)]"
-          id="skip"
-        >
+        <Navbar />
+        <main className="min-h-[calc(100dvh-4rem)] md:min-h[calc(100dvh-5rem)]" id="skip">
           {children}
         </main>
         {/* <Footer /> */}
