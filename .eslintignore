@@ -38,6 +38,7 @@ public
 
 # shad/cn
 src/components/ui/
+src/components/shadcn
 
 # supabase
 # supabase型ファイル
