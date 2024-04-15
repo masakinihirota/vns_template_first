@@ -1,2 +1,2 @@
-pnpm run prettier-fix
 pnpm run lint:fix
+pnpm run prettier-fix
