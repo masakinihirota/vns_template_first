@@ -3,18 +3,19 @@
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
-import s from './Navbar.module.css';
-
 import Logo from '@/components/icons/Logo';
 import { handleRequest } from '@/utils/auth-helpers/client';
 import { SignOut } from '@/utils/auth-helpers/server';
 import { getRedirectMethod } from '@/utils/auth-helpers/settings';
+
+import s from './Navbar.module.css';
 
 interface NavlinksProps {
   user?: any;
 }
 
 export default function Navlinks({ user }: NavlinksProps) {
+  // eslint-disable-next-line
   const router = getRedirectMethod() === 'client' ? useRouter() : null;
 
   return (
@@ -37,6 +38,7 @@ export default function Navlinks({ user }: NavlinksProps) {
       <div className="flex justify-end space-x-8">
         {user ? (
           <form onSubmit={(e) => handleRequest(e, SignOut, router)}>
+            {/* eslint-disable-next-line react-hooks/rules-of-hooks */}
             <input name="pathName" type="hidden" value={usePathname()} />
             <button className={s.link} type="submit">
               Sign out

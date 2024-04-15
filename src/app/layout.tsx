@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { Suspense } from 'react';
 
 import { languages } from '@/app/i18n/settings';
-import Navbar from '@/components/ui/Navbar';
+import Navbar from '@/components/layout/Navbar';
 import { Toaster } from '@/components/ui/Toasts/toaster';
 import { getURL } from '@/utils/helpers';
 import '@/styles/main.css';
