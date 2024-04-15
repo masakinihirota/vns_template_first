@@ -10,7 +10,7 @@ export const FooterBase = ({ t, lng }) => {
         Switch from <strong>{{ lng }}</strong> to:{' '}
       </Trans>
       {languages
-        .filter(l => lng !== l)
+        .filter((l) => lng !== l)
         .map((l, index) => {
           return (
             <span key={l}>
