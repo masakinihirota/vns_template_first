@@ -1,4 +1,5 @@
 import { Terminal } from 'lucide-react';
+import Link from 'next/link';
 
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
@@ -17,6 +18,7 @@ export default function Page() {
           You can add components and dependencies to your app using the cli.
         </AlertDescription>
       </Alert>
+      <Link href="./ModeTogglePage">ButtonTestPage</Link>
     </div>
   );
 }
