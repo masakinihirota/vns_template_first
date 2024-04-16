@@ -17,6 +17,7 @@ out/
 package-lock.json
 
 # Storybook
+src/stories/
 *.stories.ts
 *.stories.tsx
 
