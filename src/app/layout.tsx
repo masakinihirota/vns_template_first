@@ -57,13 +57,11 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function RootLayout({ children, params: { lng = 'ja' } }) {
   return (
     <html lang={lng} dir={dir(lng)} suppressHydrationWarning>
-      <body className="bg-black loading">
+      {/* <body className="bg-black loading"> */}
+      <body className="loading">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
-          <main
-            className="min-h-[calc(100dvh-4rem)] md:min-h[calc(100dvh-5rem)]"
-            id="skip"
-          >
+          <main className="min-h-[calc(100dvh-4rem)] md:min-h[calc(100dvh-5rem)]" id="skip">
             {children}
           </main>
           {/* <Footer /> */}
