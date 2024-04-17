@@ -45,7 +45,7 @@ export default function Navlinks({ user }: NavlinksProps) {
       </div>
       <div className="flex justify-end space-x-8">
         {user ? (
-          <form onSubmit={e => handleRequest(e, SignOut, router)}>
+          <form onSubmit={(e) => handleRequest(e, SignOut, router)}>
             {/* eslint-disable-next-line react-hooks/rules-of-hooks */}
             <input name="pathName" type="hidden" value={usePathname()} />
             <button className={s.link} type="submit">
