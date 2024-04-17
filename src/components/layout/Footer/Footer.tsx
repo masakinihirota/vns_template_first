@@ -8,10 +8,7 @@ export default function Footer() {
     <footer className="mx-auto max-w-[1920px] px-6 bg-zinc-900">
       <div className="grid grid-cols-1 gap-8 py-12 text-white transition-colors duration-150 border-b lg:grid-cols-12 border-zinc-600 bg-zinc-900">
         <div className="col-span-1 lg:col-span-2">
-          <Link
-            className="flex items-center flex-initial font-bold md:mr-24"
-            href="/"
-          >
+          <Link className="flex items-center flex-initial font-bold md:mr-24" href="/">
             <span className="mr-2 border rounded-full border-zinc-700">
               <Logo />
             </span>
@@ -92,19 +89,7 @@ export default function Footer() {
       </div>
       <div className="flex flex-col items-center justify-between py-12 space-y-4 md:flex-row bg-zinc-900">
         <div>
-          <span>
-            &copy; {new Date().getFullYear()} ACME, Inc. All rights reserved.
-          </span>
-        </div>
-        <div className="flex items-center">
-          <span className="text-white">Crafted by</span>
-          <a aria-label="Vercel.com Link" href="https://vercel.com">
-            <img
-              alt="Vercel.com Logo"
-              className="inline-block h-6 ml-4 text-white"
-              src="/vercel.svg"
-            />
-          </a>
+          <span>&copy; {new Date().getFullYear()} ACME, Inc. All rights reserved.</span>
         </div>
       </div>
     </footer>
