@@ -4,6 +4,7 @@ import { ThemeProvider } from 'next-themes';
 import { Suspense } from 'react';
 
 import { languages } from '@/app/i18n/settings';
+import Footer from '@/components/layout/Footer';
 import Navbar from '@/components/layout/Navbar';
 import { Toaster } from '@/components/ui/Toasts/toaster';
 import { getURL } from '@/utils/helpers';
@@ -67,7 +68,7 @@ export default async function RootLayout({ children, params: { lng = 'ja' } }) {
           >
             {children}
           </main>
-          {/* <Footer /> */}
+          <Footer />
           <Suspense>
             <Toaster />
           </Suspense>
