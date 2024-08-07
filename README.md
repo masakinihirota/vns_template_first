@@ -1,4 +1,7 @@
-# vns_template
+# vns_template_first
+初代
+
+fork元のリポジトリが古くなったので終了。
 
 ## 注意
 
